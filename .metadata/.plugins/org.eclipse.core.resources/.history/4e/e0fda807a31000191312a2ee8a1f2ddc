@@ -1,0 +1,84 @@
+package application;
+	
+import java.net.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Stream;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.fxml.FXMLLoader;
+
+
+public class Main extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("fm.fxml"));
+			//Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("eiTangotJava");
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void main(String[] args) throws IOException {
+		
+		String url = "https://ultimai.org/mdlsrc/fiddle/eitango_h1nam4.txt";
+		String tango =	readToString(url);
+		 Map<String, String> map = new HashMap<>();
+		// カンマ区切り文字列を配列にする
+		 String[] strArray = tango.split(",");
+     for(String line : strArray) {
+    	 String[] mapArray = line.split(":");
+    	 		map.put(mapArray[0],mapArray[1]);
+     }
+     
+      
+      Stream<Entry<String, String>> mapStream = map.entrySet().stream();
+      mapStream.forEach( System.out::println );
+    
+//		JavaFXアプリケーションを起動するためのメソッドです。
+		launch(args);
+		
+	}  // main method end
+		
+
+			
+			
+	public static String readToString(String targetURL) throws IOException {
+		URL url = new URL(targetURL); 
+		BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
+		StringBuilder stringBuilder = new StringBuilder(); 
+		String inputLine; 
+		while ((inputLine = bufferedReader.readLine()) != null) {
+			stringBuilder.append(inputLine); 
+			stringBuilder.append(System.lineSeparator()); 
+			} 
+		bufferedReader.close(); 
+		return stringBuilder.toString().trim(); 
+	} 
+	
+	
+	
+	
+	
+	
+			
+	
+	
+}
+
+
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="187.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fmController">
+   <bottom>
+      <Group layoutX="100.0" layoutY="122.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#oninputButtonClick" text="入力" />
+            <Button alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#onGetButtonClick" snapToPixel="false" text="Clear" translateX="50.0" />
+         </children>
+      </Group>
+   </bottom>
+   <top>
+      <Label fx:id="testLabel" text="Label" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <Group BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="testTextField" layoutY="-30.0">
+               <padding>
+                  <Insets bottom="1.0" left="5.0" right="5.0" top="2.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="judge" />
+         </children>
+      </Group>
+   </center>
+</BorderPane>

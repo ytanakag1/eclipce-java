@@ -1,0 +1,21 @@
+package application;
+
+public class Task {
+	private String tgtText;
+	
+	// コンストラクタ
+	public Task(String tgt_text) {
+		tgtText=tgt_text;
+	}
+	// テキストBOXの値処理
+	public String getResultText(String ans) {
+		String resultText = "";
+		
+		if (tgtText.equals("")) {
+			resultText = "未入力です";
+		}else {
+			resultText = "正解!";
+		}
+		return resultText;
+	}
+}

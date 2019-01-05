@@ -1,0 +1,18 @@
+package application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
+public class fmController {
+	@FXML
+	protected void onButtonClick(ActionEvent evt) {
+		Alert alrt = new Alert(AlertType.INFORMATION); //アラートを作成
+		alrt.setTitle("タイトル");
+		alrt.setHeaderText(null);
+		alrt.setContentText("テキスト");
+		
+		alrt.showAndWait(); //"表示"
+	}
+	
+}
