@@ -1,8 +1,6 @@
 package application;
 	
-import java.io.*;
-
-
+import java.io.*;	// ‘S•”‚Í“Ç‚İ‚ß‚Ä‚È‚¢
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -34,8 +32,6 @@ public class Main extends Application {
 		launch(args);
 		
 	}  // main method end
-		
-	
 	
 }
 

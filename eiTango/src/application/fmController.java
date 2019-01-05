@@ -29,8 +29,10 @@ import javafx.fxml.Initializable;
 		public void initialize(URL url, ResourceBundle rb) {
 			//URLからファイルをstreamで読み込む
           
+		
 			Tango tangoList = new Tango();
-			 try {
+			// 他のクラスのフィールドを使うにはtry~catith 必須
+			try {
 				list =  tangoList.tango();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
