@@ -3,16 +3,16 @@ package application;
 public class Task {
 	private String tgtText;
 	
-	// コンストラクタ
+	//  vコンストラクタ
 	public Task(String tgt_text) {
 		tgtText=tgt_text;
 	}
 	
 	
-	// テキストBOXの値処理
+	// vテキストBOXの値処理
 	public String getResultText(String ans) {
 		String resultText = "";
-		// 正解判定
+		//  v正解判定
 		if (tgtText.equals(ans)) {
 			resultText = "正解!";
 		}else {

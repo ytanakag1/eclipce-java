@@ -41,28 +41,35 @@ import javafx.fxml.Initializable;
 			
 			 lstCount = list.size();
 			 creatQuestion();
-			 testTextField.setFocusTraversable(true); //フォーカス
+			 testTextField.setFocusTraversable(true); // フォーカス
 		}  //end initialze
 	
 	 
 		@FXML
-		protected void oninputButtonClick(ActionEvent evt) { //「入力」ボタンクリック
+		protected void oninputButtonClick(ActionEvent evt) { // ボタンクリック
 			Task task1 = new Task(testTextField.getText());
 			String inpuText = task1.getResultText( answer);
 			judge.setText( inpuText + " : " + answer );	
 		}
 	 
 		@FXML
-		protected void onGetButtonClick(ActionEvent evt) { // Clear ボタンクリック
+		protected void onGetButtonClick(ActionEvent evt) { //  Next ボタンクリック
 			testTextField.setText(""); 
+			judge.setText( " " );	
 			creatQuestion();
 		}
+		
+		@FXML
+		protected void onKosanclick(ActionEvent evt) { // kousan ボタンクリック
+			judge.setText( "正解は : " + answer );	
+		}
+		
 		
 		protected void creatQuestion() {
 			
 			int ransu = rand.nextInt(lstCount);
 			for(Map.Entry<String, String> entry : list.get(ransu).entrySet()) {
-				testLabel.setText( entry.getKey() ); //未入力テキスト
+				testLabel.setText( entry.getKey() ); // 未入力テキスト
 				answer = entry.getValue();
 			}
 		}

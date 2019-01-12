@@ -13,7 +13,8 @@
       <Group layoutX="100.0" layoutY="122.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#oninputButtonClick" text="入力" />
-            <Button alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#onGetButtonClick" snapToPixel="false" text="Clear" translateX="50.0" />
+            <Button alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#onGetButtonClick" snapToPixel="false" text="Next" translateX="50.0" />
+            <Button layoutX="100.0" mnemonicParsing="false" onAction="#onKosanclick" text="降参" />
          </children>
       </Group>
    </bottom>
